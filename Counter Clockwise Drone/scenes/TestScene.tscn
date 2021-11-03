@@ -1,0 +1,216 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://sprites/icon.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Rocket.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/RocketHandler.gd" type="Script" id=3]
+[ext_resource path="res://scenes/Drone.tscn" type="PackedScene" id=4]
+
+[sub_resource type="NavigationPolygon" id=2]
+vertices = PoolVector2Array( 1108.34, -34.5271, 1113.39, 604.554, 1027.03, 473.311, 1027.03, 450.862, 1031.52, 257.798, 1038.26, 145.552, 1044.99, 123.103, 1031.52, 235.349, 1027.03, 343.105, 1024.79, 363.31, 1024.79, 565.353, -159.728, -41.2543, 1051.73, 33.306, 694.785, 19.8364, 223.351, 53.5103, 649.887, 96.1638, 106.615, 53.5103, 694.785, 118.613, 645.397, 192.696, 333.352, 93.9189, 214.371, 372.289, 326.618, 190.451, 319.883, 212.9, 627.437, 542.904, 706.01, 471.066, 712.745, 563.108, 620.703, 603.517, 697.03, 356.575, 697.03, 446.372, 618.458, 515.965, 625.193, 428.413, 627.437, 408.208, 703.765, 251.064, 699.275, 340.861, 634.172, 322.901, 636.417, 298.207, 699.275, 228.614, 703.765, 136.572, 643.152, 217.39, 205.392, 587.802, 212.127, 394.739, 306.413, 316.166, 306.413, 408.208, 301.923, 430.658, 304.168, 509.23, 304.168, 542.904, 313.148, 295.962, 106.615, 278.003, -46.0397, 275.758, -163.091, 607.918, -66.244, 388.004, 319.883, 605.761, -61.7542, 462.086, 111.105, 468.821, 117.84, 583.312, -46.0397, 363.31 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6 ), PoolIntArray( 7, 5, 4 ), PoolIntArray( 8, 4, 3 ), PoolIntArray( 8, 3, 9 ), PoolIntArray( 10, 2, 1 ), PoolIntArray( 11, 0, 12, 13 ), PoolIntArray( 14, 11, 13, 15 ), PoolIntArray( 11, 14, 16 ), PoolIntArray( 15, 13, 17, 18 ), PoolIntArray( 14, 15, 19 ), PoolIntArray( 20, 14, 19, 21, 22 ), PoolIntArray( 23, 24, 25, 26 ), PoolIntArray( 27, 28, 29, 30, 31 ), PoolIntArray( 32, 33, 27, 31, 34, 35, 36 ), PoolIntArray( 37, 36, 35, 38, 18, 17 ), PoolIntArray( 39, 40, 20, 41, 42, 43 ), PoolIntArray( 33, 8, 9, 27 ), PoolIntArray( 42, 31, 30, 43 ), PoolIntArray( 39, 43, 44, 45 ), PoolIntArray( 7, 4, 32, 36 ), PoolIntArray( 46, 35, 34, 41 ), PoolIntArray( 16, 47, 48, 11 ), PoolIntArray( 49, 11, 48, 50 ), PoolIntArray( 3, 2, 24, 28 ), PoolIntArray( 29, 28, 24, 23 ), PoolIntArray( 29, 23, 45, 44 ), PoolIntArray( 39, 45, 51 ), PoolIntArray( 52, 53, 54, 49 ), PoolIntArray( 6, 12, 0 ), PoolIntArray( 17, 6, 5, 37 ), PoolIntArray( 21, 18, 38, 22 ), PoolIntArray( 20, 22, 46, 41 ), PoolIntArray( 55, 20, 40, 50 ), PoolIntArray( 48, 55, 50 ), PoolIntArray( 49, 50, 52 ), PoolIntArray( 26, 25, 10, 1 ), PoolIntArray( 49, 54, 39, 51 ), PoolIntArray( 1, 49, 51 ), PoolIntArray( 1, 51, 26 ) ]
+outlines = [ PoolVector2Array( -159.728, -41.2543, 1108.34, -34.5271, 1113.39, 604.554, -163.091, 607.918 ), PoolVector2Array( 333.352, 93.9189, 326.618, 190.451, 645.397, 192.696, 649.887, 96.1638 ), PoolVector2Array( 694.785, 19.8364, 694.785, 118.613, 1044.99, 123.103, 1051.73, 33.306 ), PoolVector2Array( 703.765, 136.572, 699.275, 228.614, 1031.52, 235.349, 1038.26, 145.552 ), PoolVector2Array( 703.765, 251.064, 699.275, 340.861, 1027.03, 343.105, 1031.52, 257.798 ), PoolVector2Array( 697.03, 356.575, 697.03, 446.372, 1027.03, 450.862, 1024.79, 363.31 ), PoolVector2Array( 706.01, 471.066, 712.745, 563.108, 1024.79, 565.353, 1027.03, 473.311 ), PoolVector2Array( 319.883, 605.761, 304.168, 542.904, 627.437, 542.904, 620.703, 603.517 ), PoolVector2Array( 301.923, 430.658, 304.168, 509.23, 618.458, 515.965, 625.193, 428.413 ), PoolVector2Array( 306.413, 408.208, 306.413, 316.166, 634.172, 322.901, 627.437, 408.208 ), PoolVector2Array( 313.148, 295.962, 319.883, 212.9, 643.152, 217.39, 636.417, 298.207 ), PoolVector2Array( 223.351, 53.5103, 106.615, 53.5103, 106.615, 278.003, -46.0397, 275.758, -46.0397, 363.31, 214.371, 372.289 ), PoolVector2Array( -66.244, 388.004, -61.7542, 462.086, 111.105, 468.821, 117.84, 583.312, 205.392, 587.802, 212.127, 394.739 ) ]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+script = ExtResource( 3 )
+rocket_speed = 200.0
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+navpoly = SubResource( 2 )
+
+[node name="Rocket" parent="Navigation2D" instance=ExtResource( 2 )]
+
+[node name="Drone" parent="Navigation2D" instance=ExtResource( 4 )]
+position = Vector2( 657.163, 480.683 )
+scale = Vector2( 0.28192, 0.297724 )
+mov_speed = 300
+rot_speed = 100
+
+[node name="Line2D" type="Line2D" parent="Navigation2D"]
+
+[node name="MapStufs" type="Node" parent="."]
+
+[node name="Area2D" type="Area2D" parent="MapStufs"]
+position = Vector2( 871.261, 77.7819 )
+scale = Vector2( 4.31049, 0.731999 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapStufs/Area2D"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MapStufs/Area2D"]
+texture = ExtResource( 1 )
+
+[node name="Area2D3" type="Area2D" parent="MapStufs"]
+position = Vector2( 862.352, 186.472 )
+scale = Vector2( 4.31049, 0.771999 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapStufs/Area2D3"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MapStufs/Area2D3"]
+texture = ExtResource( 1 )
+
+[node name="Area2D4" type="Area2D" parent="MapStufs"]
+position = Vector2( 858.788, 296.943 )
+scale = Vector2( 4.31049, 0.771999 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapStufs/Area2D4"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MapStufs/Area2D4"]
+texture = ExtResource( 1 )
+
+[node name="Area2D5" type="Area2D" parent="MapStufs"]
+position = Vector2( 853.443, 405.633 )
+scale = Vector2( 4.31049, 0.771999 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapStufs/Area2D5"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MapStufs/Area2D5"]
+texture = ExtResource( 1 )
+
+[node name="Area2D6" type="Area2D" parent="MapStufs"]
+position = Vector2( 858.788, 517.886 )
+scale = Vector2( 4.31049, 0.771999 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapStufs/Area2D6"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MapStufs/Area2D6"]
+texture = ExtResource( 1 )
+
+[node name="Area2D2" type="Area2D" parent="MapStufs"]
+position = Vector2( 482.829, 145.49 )
+scale = Vector2( 4.31049, 0.731999 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapStufs/Area2D2"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MapStufs/Area2D2"]
+texture = ExtResource( 1 )
+
+[node name="Area2D7" type="Area2D" parent="MapStufs"]
+position = Vector2( 473.92, 254.18 )
+scale = Vector2( 4.31049, 0.771999 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapStufs/Area2D7"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MapStufs/Area2D7"]
+texture = ExtResource( 1 )
+
+[node name="Area2D8" type="Area2D" parent="MapStufs"]
+position = Vector2( 470.356, 364.651 )
+scale = Vector2( 4.31049, 0.771999 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapStufs/Area2D8"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MapStufs/Area2D8"]
+texture = ExtResource( 1 )
+
+[node name="Area2D9" type="Area2D" parent="MapStufs"]
+position = Vector2( 465.011, 473.341 )
+scale = Vector2( 4.31049, 0.771999 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapStufs/Area2D9"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MapStufs/Area2D9"]
+texture = ExtResource( 1 )
+
+[node name="Area2D10" type="Area2D" parent="MapStufs"]
+position = Vector2( 470.356, 585.594 )
+scale = Vector2( 4.31049, 0.771999 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapStufs/Area2D10"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MapStufs/Area2D10"]
+texture = ExtResource( 1 )
+
+[node name="Area2D11" type="Area2D" parent="MapStufs"]
+position = Vector2( 163.887, 214.98 )
+scale = Vector2( 0.689384, 4.1002 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapStufs/Area2D11"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MapStufs/Area2D11"]
+texture = ExtResource( 1 )
+
+[node name="Area2D12" type="Area2D" parent="MapStufs"]
+position = Vector2( 64.1066, 321.888 )
+scale = Vector2( 2.8878, 0.511922 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapStufs/Area2D12"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MapStufs/Area2D12"]
+texture = ExtResource( 1 )
+
+[node name="Area2D13" type="Area2D" parent="MapStufs"]
+position = Vector2( 154.908, 491.106 )
+scale = Vector2( 0.46481, 2.51283 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapStufs/Area2D13"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MapStufs/Area2D13"]
+texture = ExtResource( 1 )
+
+[node name="Area2D14" type="Area2D" parent="MapStufs"]
+position = Vector2( 64.1066, 427.4 )
+scale = Vector2( 2.8878, 0.511922 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapStufs/Area2D14"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="MapStufs/Area2D14"]
+texture = ExtResource( 1 )
