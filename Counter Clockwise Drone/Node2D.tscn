@@ -25,5 +25,3 @@ texture = ExtResource( 2 )
 [node name="Missile" parent="." instance=ExtResource( 1 )]
 position = Vector2( 139.438, 86.139 )
 missile_speed = 400.0
-
-[connection signal="start_missile" from="." to="Missile" method="_on_Node2D_start_missile"]

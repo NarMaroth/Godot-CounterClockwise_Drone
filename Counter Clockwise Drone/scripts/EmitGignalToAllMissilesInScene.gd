@@ -1,9 +1,8 @@
-extends Node2D
+extends Node
 
 export(NodePath) var drone # a "path" to the drone node in the scene
 
 signal start_missile(target)
-
 
 func _ready():
 	for node in get_children():
@@ -14,6 +13,6 @@ func _ready():
 				
 	# find Missile Node and connect the "start_missile" signal to "_on_Node2D_start_missile" func 
 	#in the Missile script
-	
-	emit_signal("start_missile",get_node(drone))
 
+
+	emit_signal("start_missile",get_node(drone))

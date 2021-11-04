@@ -1,4 +1,3 @@
-- detener o detectar cuando este al final del path y se encuentra a cierta distancia del target
 - el sprite rota hacia el punto en del path al cual se esta dirijiendo
 - cada x tiempo va dejando nubes de humo animados que desaparecen al poco tiempo de aparecer
 - remplazar al misil con anim. de explosion

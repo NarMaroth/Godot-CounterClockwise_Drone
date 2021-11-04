@@ -7,5 +7,3 @@
 modulate = Color( 1, 0, 0, 1 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
-
-[node name="Path Drawer" type="Line2D" parent="."]
