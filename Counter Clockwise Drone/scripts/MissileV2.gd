@@ -4,8 +4,10 @@ extends KinematicBody2D
 
 export(float) var move_speed = 6000.0;
 export(float) var rotation_speed = 150.0
-export(float) var trigger_distance = 10.0;
+export(float) var trigger_distance = 45.0;
+
 export(PackedScene) var smoke_cloud
+export(PackedScene) var explosion
 
 var current_target
 var target_angle
@@ -28,11 +30,14 @@ func _process(delta):
 	if(reached_target()):
 		$UpdateNavigationTimer.stop()
 		$SmokeCloudTimer.stop()
+		instantiate_packed_scene(explosion)
 		set_process(false)
+		queue_free()
 
 	
 
 func move_forward(delta):
+# warning-ignore:return_value_discarded
 	move_and_slide(Vector2(1, 0).rotated(rotation) * move_speed * delta)
 
 func rotate_towards_next_path_pos(delta):
@@ -58,8 +63,10 @@ func update_navigation_path(var start_position, var end_position):
 	path = nav2D.get_simple_path(start_position,end_position, true)
 	path.remove(0)
 
-
-
+func instantiate_packed_scene(packed_scene):
+	var clone = packed_scene.instance() 
+	clone.position = position
+	get_parent().add_child(clone)
 #	SIGNALS
 
 func _on_Update_Navigation_Timer_timeout():
@@ -78,6 +85,4 @@ func _on_Node2D_start_missile(target):
 
 
 func _on_SmokeCloudTimer_timeout():
-	var smokeClone = smoke_cloud.instance() 
-	smokeClone.position = position
-	get_parent().add_child(smokeClone)
+	instantiate_packed_scene(smoke_cloud)

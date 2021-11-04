@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://sprites/icon.png" type="Texture" id=1]
-[ext_resource path="res://scenes/SmokeCloud.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/GameManager.gd" type="Script" id=3]
 [ext_resource path="res://scenes/Drone.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/MissileV2.tscn" type="PackedScene" id=5]
@@ -214,4 +213,3 @@ rot_speed = 150
 [node name="Missile" parent="." instance=ExtResource( 5 )]
 position = Vector2( 84.1702, 129.943 )
 move_speed = 8000.0
-smoke_cloud = ExtResource( 2 )

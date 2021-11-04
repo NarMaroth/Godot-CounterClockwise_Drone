@@ -1,2 +1,2 @@
-- remplazar al misil con anim. de explosion
+- hacer menu simple para reiniciar el juego cuando el misil explota con el player
 - destruir al player cuando el misil lo alcanza
