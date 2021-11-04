@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://sprites/icon.png" type="Texture" id=1]
-[ext_resource path="res://scripts/Missile.gd" type="Script" id=2]
+[ext_resource path="res://scripts/MissileV1.gd" type="Script" id=2]
 
 [node name="Missile" type="Sprite"]
 modulate = Color( 1, 0, 0, 1 )
@@ -9,6 +9,6 @@ texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Update Navigation Timer" type="Timer" parent="."]
-wait_time = 0.041
+wait_time = 0.04
 
 [connection signal="timeout" from="Update Navigation Timer" to="." method="_on_Update_Navigation_Timer_timeout"]

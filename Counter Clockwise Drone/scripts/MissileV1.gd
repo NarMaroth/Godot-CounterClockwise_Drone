@@ -1,5 +1,7 @@
 extends Sprite
 
+# Move along the path and rotate towards the next path point
+
 export(float) var move_speed = 100.0;
 export(float) var rotation_speed = 5.0
 export(float) var trigger_distance = 10.0;
@@ -15,8 +17,7 @@ func _ready():
 	set_process(false)
 
 func _process(delta):
-	update_navigation_path(global_position, current_target.global_position)
-		
+	
 	if (rotation != target_angle):
 		rotate_towards_next_path_pos(delta)
 	
@@ -50,12 +51,18 @@ func reached_target()->bool:
 			return true
 	return false
 
-
 func update_navigation_path(var start_position, var end_position):
 	path = nav2D.get_simple_path(start_position,end_position, true)
 	path.remove(0)
 	
 
+
+
+# SIGNALS
+
+func _on_Update_Navigation_Timer_timeout():
+	update_navigation_path(global_position, current_target.global_position)
+	target_angle = path[0].angle_to_point(position)
 
 func _on_Node2D_start_missile(target):
 	current_target = target
@@ -65,6 +72,3 @@ func _on_Node2D_start_missile(target):
 	set_process(true)
 
 
-func _on_Update_Navigation_Timer_timeout():
-	update_navigation_path(global_position, current_target.global_position)
-	target_angle = path[0].angle_to_point(position)

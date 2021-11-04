@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scenes/Missile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/MissileV2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sprites/icon.png" type="Texture" id=2]
 [ext_resource path="res://scripts/GameManager.gd" type="Script" id=3]
 
@@ -23,4 +23,4 @@ position = Vector2( 874, 482 )
 texture = ExtResource( 2 )
 
 [node name="Missile" parent="." instance=ExtResource( 1 )]
-position = Vector2( 191, 208.5 )
+position = Vector2( 269.602, 138.157 )
