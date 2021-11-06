@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/GUIs/Button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/Restart_Btn.gd" type="Script" id=2]
+[ext_resource path="res://scripts/GameOver_Menu.gd" type="Script" id=3]
+
+[node name="GameOver_Menu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlackOverlay" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.337255 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Restart_Btn" parent="." instance=ExtResource( 1 )]
+margin_left = 364.157
+margin_top = 329.774
+margin_right = 624.157
+margin_bottom = 386.774
+focus_neighbour_top = NodePath("../MainMenu_Btn")
+focus_neighbour_bottom = NodePath("../MainMenu_Btn")
+text = "Restart"
+script = ExtResource( 2 )
+
+[node name="MainMenu_Btn" parent="." instance=ExtResource( 1 )]
+margin_left = 364.157
+margin_top = 420.888
+margin_right = 624.157
+margin_bottom = 477.888
+focus_neighbour_top = NodePath("../Restart_Btn")
+focus_neighbour_bottom = NodePath("../Restart_Btn")
+text = "Main Menu"

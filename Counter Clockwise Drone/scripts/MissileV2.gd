@@ -1,5 +1,5 @@
 extends KinematicBody2D
-
+signal reached_target
 # move always forwards and rotate towards the path[0] position 
 
 export(float) var move_speed = 6000.0;
@@ -18,6 +18,7 @@ onready var nav2D = get_parent().find_node("Navigation2D")
 
 func _ready():
 	rotation_speed = deg2rad(rotation_speed)
+	connect("reached_target",get_parent(),"game_over")
 	set_process(false)
 
 func _process(delta):
@@ -31,7 +32,9 @@ func _process(delta):
 		$UpdateNavigationTimer.stop()
 		$SmokeCloudTimer.stop()
 		instantiate_packed_scene(explosion)
+		emit_signal("reached_target")
 		set_process(false)
+		current_target.queue_free()
 		queue_free()
 
 	

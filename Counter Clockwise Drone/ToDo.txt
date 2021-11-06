@@ -1,2 +1,2 @@
-- hacer menu simple para reiniciar el juego cuando el misil explota con el player
-- destruir al player cuando el misil lo alcanza
+- player colisiona con el entorno
+- cuando colisionan misiles entre si explotan y el juego continua

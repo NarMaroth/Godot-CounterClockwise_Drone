@@ -16,6 +16,8 @@ func _process(delta):
 
 
 	if(Input.is_action_pressed("ui_up")):
+# warning-ignore:return_value_discarded
 		move_and_slide(Vector2(0,-1).rotated(rotation) * mov_speed)
 	if(Input.is_action_pressed("ui_down")):
+# warning-ignore:return_value_discarded
 		move_and_slide(Vector2(0,1).rotated(rotation) * mov_speed)

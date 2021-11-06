@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Themes/SelectedButtonTheme.tres" type="StyleBox" id=1]
+[ext_resource path="res://Themes/NonSelectedTheme.tres" type="StyleBox" id=2]
+[ext_resource path="res://Resources/Fonts/ARIBLK.TTF" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 3 )
+
+[node name="Button" type="Button"]
+margin_right = 125.0
+margin_bottom = 33.0
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 1 )
+custom_styles/focus = ExtResource( 1 )
+custom_styles/normal = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
