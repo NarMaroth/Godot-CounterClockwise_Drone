@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/Managers/Receivers_Manager.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Crates/Crate_Receiver.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Crates/Crate_Dispatcher.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Drone.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Crates/Crate.tscn" type="PackedScene" id=5]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Crate_Dispatcher" parent="." instance=ExtResource( 3 )]
+position = Vector2( 160.643, 217.782 )
+crate_scn = ExtResource( 5 )
+receiver_manager_path = NodePath("../Receiver_Manager")
+
+[node name="Receiver_Manager" type="Node" parent="."]
+script = ExtResource( 1 )
+crate_receiver_scn = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Receiver_Manager"]
+position = Vector2( 878, 204 )
+
+[node name="Area2D2" type="Area2D" parent="Receiver_Manager"]
+position = Vector2( 232, 498 )
+
+[node name="Area2D3" type="Area2D" parent="Receiver_Manager"]
+position = Vector2( 664, 516 )
+
+[node name="Drone" parent="." instance=ExtResource( 4 )]
+position = Vector2( 562.643, 485.782 )
+mov_speed = 200
+rot_speed = 150

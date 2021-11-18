@@ -1,2 +1,15 @@
-- player colisiona con el entorno
 - cuando colisionan misiles entre si explotan y el juego continua
+
+- SURVIVAL v.1:
+
+- dispenser entrega caja
+- 	player al entrar area cerca del dispenser se le posiciona caja encima 
+- 		caja desaparece al entrar en el area de entrega
+- mostrar la cant de cajas entregadas en la pantalla
+
+- añadir timer que se reinicia cuando se entrega la caja
+-	si no llega a 0 se instancia un misil
+
+- SURVIVAL v.1:
+- dispenser entrega distintos tipos de cajas
+- se puede ver previamente como es la caja

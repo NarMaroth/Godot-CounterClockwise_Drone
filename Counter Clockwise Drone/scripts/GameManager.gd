@@ -1,28 +1,20 @@
-extends Node2D
+extends Node
 
-export(NodePath) var drone # a "path" to the drone node in the scene
+export(NodePath) var missile_manager_path
+onready var missile_manager = get_node(missile_manager_path)
+export(NodePath) var gameover_menu_path
+onready var gameover_menu = get_node(gameover_menu_path)
 
-var con_res
-
-signal start_missiles(target)
-
-
-# find Missile Node and connect the "start_missiles" signal to "_on_Node2D_start_missiles" func 
-#in the Missile script
 
 func _ready():
-	
-	for node in get_children():
-		var node_script = node.get_script()
-		if node_script != null:
-			if node_script.get_path().get_file() == "MissileV2.gd":
-				con_res = connect("start_missiles",node,"_on_Node2D_start_missile")
-				if(con_res != OK):
-					print("failed to connect to node")				
-	emit_signal("start_missiles",get_node(drone))
-	
-func game_over():
+	$StartGame_Timer.start()
+
+func trigger_gameover():
 	$GameOver_Timer.start()
 
 func _on_GameOver_Timer_timeout():
-	$CanvasLayer/GameOver_Menu.visible = true
+	gameover_menu.visible = true
+
+
+func _on_StartGame_Timer_timeout():
+	missile_manager.launch_missile()
