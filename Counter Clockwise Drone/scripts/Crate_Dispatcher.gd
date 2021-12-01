@@ -1,36 +1,39 @@
 extends Area2D
 var cant_crate_variants = 5
 
+signal crateReceived_signal
+
 export(PackedScene) var crate_scn
 export(NodePath) var receiver_manager_path
+onready var receiver_manager = get_node(receiver_manager_path)
+export(NodePath) var gameUI_path
+onready var game_ui = get_node(gameUI_path)
 
 var current_crate_variant
 var crate_clone
-var receiver_manager
 
 onready var animPlayer = $Crate_Sprite/AnimationPlayer
 var rng = RandomNumberGenerator.new()
 
 
 func _ready():
-	receiver_manager = get_node(receiver_manager_path)
-	dispatch_create()
+	
+	Dispatch_create()
 	
 
-func dispatch_create():
+func Dispatch_create():
 	current_crate_variant = get_random_crate_variant()
 	animPlayer.play("Loaded_0"+str(current_crate_variant))
-
-func get_random_crate_variant()->int:
-	rng.randomize()
-	return rng.randi_range(0,cant_crate_variants-1)
 	
-func add_crate_to_drone(body):
+func Add_crate_to_drone(body):
 	crate_clone = crate_scn.instance()
 	body.add_child(crate_clone)
 	crate_clone.position = Vector2.ZERO;
 	crate_clone.set_variant(current_crate_variant)
 
+func get_random_crate_variant()->int:
+	rng.randomize()
+	return rng.randi_range(0,cant_crate_variants-1)
 
 
 func _on_Crate_Dispatcher_body_entered(body):
@@ -39,11 +42,12 @@ func _on_Crate_Dispatcher_body_entered(body):
 	if(body.transporting_create == false):
 		body.transporting_create = true;
 		animPlayer.play("Empty")
-		add_crate_to_drone(body)
-		receiver_manager.generate_crate_receiver(self,current_crate_variant)
+		Add_crate_to_drone(body)
+		receiver_manager.Generate_Crate_Receiver(self,current_crate_variant)
 	
-func on_Crate_Received():
+func On_Crate_Received():
 	crate_clone.queue_free()
-	dispatch_create()
-
+	Dispatch_create()
+	emit_signal("crateReceived_signal")
+	
 

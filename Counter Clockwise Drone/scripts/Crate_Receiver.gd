@@ -1,6 +1,6 @@
 extends Area2D
 
-signal create_received
+signal createReceived_signal
 
 
 onready var animPlayer = $AnimationPlayer
@@ -22,7 +22,7 @@ func set_sprite(variant:int):
 func _on_Create_Receiver_body_entered(body):
 	if(body.transporting_create == true):
 		body.transporting_create = false
-		emit_signal("create_received")
+		emit_signal("createReceived_signal")
 		queue_free()
 
 

@@ -11,6 +11,8 @@ extents = Vector2( 18.25, 10 )
 [node name="Missile" type="KinematicBody2D"]
 z_index = 1
 script = ExtResource( 2 )
+move_speed = 6500.0
+rotation_speed = 250.0
 smoke_cloud = ExtResource( 3 )
 explosion = ExtResource( 4 )
 

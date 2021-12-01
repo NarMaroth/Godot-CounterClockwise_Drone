@@ -26,21 +26,27 @@ func init():
 func _process(delta):
 	
 	if (rotation != target_angle):
-		rotate_towards_next_path_pos(delta)
+		Rotate_towards_next_path_pos(delta)
 		
-	move_forward(delta)
+	Move_forward(delta)
 	
 	if(reached_target()):
-		instantiate_packed_scene(explosion)
-		target.destroy()
-		queue_free()
+		Explode_With(target)
+		
 
+func Explode():
+	instantiate_packed_scene(explosion)
+	queue_free()
+	
+func Explode_With(col):
+	col.Explode()
+	Explode()
 
-func move_forward(delta):
+func Move_forward(delta):
 # warning-ignore:return_value_discarded
 	move_and_slide(Vector2(1, 0).rotated(rotation) * move_speed * delta)
 
-func rotate_towards_next_path_pos(delta):
+func Rotate_towards_next_path_pos(delta):
 	var angle_dif = -short_angle_dist(rotation, target_angle)
 	if(abs(angle_dif) < 0.05):
 		rotation = target_angle
@@ -73,8 +79,6 @@ func instantiate_packed_scene(packed_scene):
 func _on_Update_Navigation_Timer_timeout():
 	update_navigation_path(global_position, target.global_position)
 	target_angle = path[0].angle_to_point(position)
-	
-
 
 func _on_SmokeCloudTimer_timeout():
 	instantiate_packed_scene(smoke_cloud)

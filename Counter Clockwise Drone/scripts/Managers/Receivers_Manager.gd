@@ -8,16 +8,17 @@ var rng = RandomNumberGenerator.new()
 
 func _ready():
 	receiver_spots = get_children()
+
+
 	
-func generate_crate_receiver(dispatcher_node,variant:int):
-	generate_receiver(variant)
-	var res = receiver_clone.connect("create_received",dispatcher_node,"on_Crate_Received")
+func Generate_Crate_Receiver(dispatcher_node,variant:int):
+	generate_Receiver(variant)
+	var res = receiver_clone.connect("createReceived_signal",dispatcher_node,"On_Crate_Received")
 	if(res != 0):
-		print("Failed to connect {Receiver} with {Dispatcher}")
+		print("Failed to connect {Receiver} with {Dispatcher}")		
 		
-	
 		
-func generate_receiver(variant:int):
+func generate_Receiver(variant:int):
 	var receiver_spot = get_random_receiver_spot()
 	receiver_clone = crate_receiver_scn.instance()
 	receiver_spot.add_child(receiver_clone)

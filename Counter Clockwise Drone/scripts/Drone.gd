@@ -31,6 +31,6 @@ func _process(delta):
 # warning-ignore:return_value_discarded
 	move_and_slide(move_dir.rotated(rotation) * mov_speed)
 	
-func destroy():
-	gamemanager.trigger_gameover()
+func Explode():
+	gamemanager.Trigger_gameover()
 	queue_free()
