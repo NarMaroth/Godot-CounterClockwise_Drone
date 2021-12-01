@@ -1,4 +1,3 @@
-- reiniciar timer cuando se entrega una caja
-- cuando se entrega la caja, todos los misiles explotan en el momento
+- arreglar gameover cuando misil colisiona con player
 - cuando colisionan misiles entre si explotan y el juego continua
 

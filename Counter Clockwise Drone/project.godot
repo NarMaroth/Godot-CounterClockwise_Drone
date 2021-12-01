@@ -14,6 +14,10 @@ config/name="Counter Clockwise Drone"
 run/main_scene="res://scenes/Test_Scenes/TestSceneV3.tscn"
 config/icon="res://sprites/icon.png"
 
+[display]
+
+window/size/fullscreen=true
+
 [input]
 
 ui_left={
