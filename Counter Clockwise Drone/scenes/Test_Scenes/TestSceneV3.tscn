@@ -76,10 +76,10 @@ position = Vector2( 961.878, 651.488 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 100
 
+[node name="Game_UI" parent="CanvasLayer" instance=ExtResource( 11 )]
+
 [node name="GameOver_Menu" parent="CanvasLayer" instance=ExtResource( 2 )]
 visible = false
-
-[node name="Game_UI" parent="CanvasLayer" instance=ExtResource( 11 )]
 
 [node name="MapStufs" type="Node" parent="."]
 

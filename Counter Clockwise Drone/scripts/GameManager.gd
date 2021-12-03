@@ -16,6 +16,8 @@ func _ready():
 	crateDispatcher.connect("crateReceived_signal",self,"On_Crate_Received")
 	
 func Trigger_gameover():
+	missile_manager.Destroy_All_Active_Missiles()
+	game_ui.ResetAndStop_Timers()
 	$GameOver_Timer.start()
 
 func _on_GameOver_Timer_timeout():

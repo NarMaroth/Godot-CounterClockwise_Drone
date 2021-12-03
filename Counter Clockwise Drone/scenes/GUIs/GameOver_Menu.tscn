@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/GUIs/Button.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/GUI/Restart_Btn.gd" type="Script" id=2]
 [ext_resource path="res://scripts/GUI/GameOver_Menu.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="GameOver_Menu" type="Control"]
 pause_mode = 2
@@ -13,29 +15,42 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BlackOverlay" type="ColorRect" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.337255 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Restart_Btn" parent="." instance=ExtResource( 1 )]
-margin_left = 364.157
-margin_top = 329.774
-margin_right = 624.157
-margin_bottom = 386.774
+[node name="ColorRect" type="ColorRect" parent="PanelContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 0.337255 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.36084
+anchor_top = 0.530833
+anchor_right = 0.63916
+anchor_bottom = 0.749167
+margin_top = -1.52588e-05
+custom_constants/separation = 40
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Restart_Btn" parent="VBoxContainer" instance=ExtResource( 1 )]
+margin_right = 285.0
+margin_bottom = 44.0
 focus_neighbour_top = NodePath("../MainMenu_Btn")
 focus_neighbour_bottom = NodePath("../MainMenu_Btn")
 text = "Restart"
 script = ExtResource( 2 )
 
-[node name="MainMenu_Btn" parent="." instance=ExtResource( 1 )]
-margin_left = 364.157
-margin_top = 420.888
-margin_right = 624.157
-margin_bottom = 477.888
+[node name="MainMenu_Btn" parent="VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 84.0
+margin_right = 285.0
+margin_bottom = 128.0
 focus_neighbour_top = NodePath("../Restart_Btn")
 focus_neighbour_bottom = NodePath("../Restart_Btn")
 text = "Main Menu"
